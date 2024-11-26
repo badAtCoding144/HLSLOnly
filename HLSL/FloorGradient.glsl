@@ -10,11 +10,12 @@ vec3 palette[5] = vec3[5] (
 
 void main() {
   vec2 uv = gl_FragCoord.xy / iResolution.xy;
-  uv = uv * 4;
+  uv = uv * 4.0;
 
-  float colorSection = floor(uv.x);
+  int colorSection = int(floor(uv.x));
 
-  vec3 CurrentColor = mix(pallete[colorSection],pallete[colorSection+1],fract(uv.x));
+  vec3 CurrentColor = mix(palette[colorSection],palette[colorSection+1],fract(uv.x));
   
-  gl_FragColor = CurrentColor;
+  gl_FragColor = vec4(CurrentColor,1.0);
 }
+//this makes a texture that is a gradient of 5 colours where each colour is an int across the X axis.
