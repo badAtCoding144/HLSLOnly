@@ -12,3 +12,4 @@ void main() {
   
   gl_FragColor = vec4(IsCloseEnough, 0.0, 0.0, 1.0);
 }
+//makes a dot in the centre of the screen and then adjusts it for the aspect ratio of the resolution, for texture on quads
