@@ -10,5 +10,5 @@ void main() {
   
   
   
-  gl_FragColor = texture(iChannel0, uv);
+  gl_FragColor = texture(iChannel0, vec2(uv.x,1.0-uv.y));
 }
