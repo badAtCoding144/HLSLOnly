@@ -5,10 +5,11 @@ void main() {
   vec2 uv = gl_FragCoord.xy / iResolution.xy * 4.0;
   uv *= vec2(iResolution.x / iResolution.y, 1.0);  
 
-  uv.x  = fract(uv.x);
-  uv.y = fract(uv.y);
   
   
+  uv = fract(uv);
   
-  gl_FragColor = texture(iChannel0, vec2(uv.x,1.0-uv.y));
+  uv = mod(uv,vec2(2.0,2.0));
+  
+  gl_FragColor = texture(iChannel0, 1.0 - uv);
 }
