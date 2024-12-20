@@ -5,7 +5,8 @@ void main() {
   vec2 uv = gl_FragCoord.xy / iResolution.xy * 4.0;
   uv *= vec2(iResolution.x / iResolution.y, 1.0);  
 
-  
+  uv.x = mod(); 
+  uv.y = mod();
   
   uv = fract(uv);
   
